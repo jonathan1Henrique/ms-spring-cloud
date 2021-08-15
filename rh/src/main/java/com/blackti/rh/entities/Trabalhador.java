@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GenerationType;
+import java.io.Serializable;
 
 @Data
 @Entity
@@ -17,7 +18,8 @@ import javax.persistence.GenerationType;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "tb_trabalhador")
-public class Trabalhador {
+public class Trabalhador implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

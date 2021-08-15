@@ -1,4 +1,4 @@
-package com.folhapagamento;
+package com.blackti.folha;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
