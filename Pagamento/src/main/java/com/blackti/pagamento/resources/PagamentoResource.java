@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/pagamento")
-public class PagamentResource {
+public class PagamentoResource {
 
-    private static Logger logger = LoggerFactory.getLogger(PagamentResource.class);
+    private static Logger logger = LoggerFactory.getLogger(PagamentoResource.class);
 
     @Autowired
     private Environment env;
