@@ -19,4 +19,9 @@ public class PagamentoService {
 
         return new Pagamento(trabalhador.getNome(), trabalhador.getRendaDiaria(), dias);
     }
+
+//    public Pagamento getTesteAlternativeMethod (long trabalhadorId, int dias){
+//
+//        return new Pagamento("Teste", 300.0, dias);
+//    }
 }

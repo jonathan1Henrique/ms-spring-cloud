@@ -2,6 +2,7 @@ package com.blackti.pagamento.resources;
 
 import com.blackti.pagamento.entities.Pagamento;
 import com.blackti.pagamento.services.PagamentoService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,27 @@ public class PagamentoResource {
     @Autowired
     private PagamentoService pagamentoService;
 
+//    @HystrixCommand(fallbackMethod = "findByIdAlternative")
     @GetMapping(value = "/{trabalhadorId}/dias/{dias}")
     public ResponseEntity<Pagamento> findById(@PathVariable Long trabalhadorId, @PathVariable Integer dias) {
 
-        logger.info("PORT = " + env.getProperty("local.server.port"));
+//        int x = 1;
+//
+//        if( x == 1 ){
+//            throw new Exception();
+//        }
+//        try {
+//            Thread.sleep(3000L);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         Pagamento obj = pagamentoService.getPagamento(trabalhadorId, dias);
         return ResponseEntity.ok(obj);
     }
+
+//    public ResponseEntity<Pagamento> findByIdAlternative(Long trabalhadorId,Integer dias){
+//
+//        return ResponseEntity.ok(pagamentoService.getTesteAlternativeMethod(trabalhadorId, dias));
+//    }
 }
