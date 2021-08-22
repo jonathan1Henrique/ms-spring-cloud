@@ -26,27 +26,27 @@ public class PagamentoResource {
     @Autowired
     private PagamentoService pagamentoService;
 
-//    @HystrixCommand(fallbackMethod = "findByIdAlternative")
+    @HystrixCommand(fallbackMethod = "findByIdAlternative")
     @GetMapping(value = "/{trabalhadorId}/dias/{dias}")
-    public ResponseEntity<Pagamento> findById(@PathVariable Long trabalhadorId, @PathVariable Integer dias) {
+    public ResponseEntity<Pagamento> findById(@PathVariable Long trabalhadorId, @PathVariable Integer dias) throws Exception{
 
 //        int x = 1;
-//
+
 //        if( x == 1 ){
 //            throw new Exception();
 //        }
-//        try {
-//            Thread.sleep(3000L);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(3000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         Pagamento obj = pagamentoService.getPagamento(trabalhadorId, dias);
         return ResponseEntity.ok(obj);
     }
 
-//    public ResponseEntity<Pagamento> findByIdAlternative(Long trabalhadorId,Integer dias){
-//
-//        return ResponseEntity.ok(pagamentoService.getTesteAlternativeMethod(trabalhadorId, dias));
-//    }
+    public ResponseEntity<Pagamento> findByIdAlternative(Long trabalhadorId,Integer dias){
+
+        return ResponseEntity.ok(pagamentoService.getTesteAlternativeMethod(trabalhadorId, dias));
+    }
 }
