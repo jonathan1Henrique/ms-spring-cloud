@@ -1,15 +1,19 @@
 package com.configserver.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 @EnableConfigServer
 @SpringBootApplication
-public class ConfigServerApplication {
+public class ConfigServerApplication{
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigServerApplication.class, args);
     }
+
+    @Value("${spring.cloud.config.server.git.password}")
+    private String userName;
 
 }

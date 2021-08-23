@@ -41,11 +41,11 @@ public class PagamentoResource {
 //        if( x == 1 ){
 //            throw new Exception();
 //        }
-        try {
-            Thread.sleep(3000L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(3000L);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         Pagamento obj = pagamentoService.getPagamento(trabalhadorId, dias);
         return ResponseEntity.ok(obj);
