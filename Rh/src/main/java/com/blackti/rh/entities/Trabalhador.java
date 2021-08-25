@@ -13,10 +13,10 @@ import javax.persistence.GenerationType;
 import java.io.Serializable;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
 @Table(name = "tb_trabalhador")
 public class Trabalhador implements Serializable {
     private static final long serialVersionUID = 1L;
