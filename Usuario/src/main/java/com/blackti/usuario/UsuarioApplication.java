@@ -12,7 +12,7 @@ public class UsuarioApplication {
 
 
     public static void main(String[] args) {
-        System.out.println("BCRYPT = "  + new BCryptPasswordEncoder().encode("12345"));
+//        System.out.println("BCRYPT = "  + new BCryptPasswordEncoder().encode("12345"));
         SpringApplication.run(UsuarioApplication.class, args);
 
     }

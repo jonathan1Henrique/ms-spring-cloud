@@ -22,6 +22,8 @@ public class Usuario implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
     private String nome;
+
+    @Column(unique = true)
     private String email;
     private String senha;
 
