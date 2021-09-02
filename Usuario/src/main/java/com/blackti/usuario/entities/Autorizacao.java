@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Table(name = "tb_autorizacao")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Autorizacao implements Serializable {
-
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
