@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.blackti.oauth.services.UsuarioService;
 
 @RestController
-@RequestMapping(value = "/teste")
+@RequestMapping(value = "/usuario-oauth")
 public class UsuarioResouces {
 
     @Autowired
@@ -24,10 +24,5 @@ public class UsuarioResouces {
         }catch (IllegalAccessException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-    }
-
-    @GetMapping(value = "/teste")
-    public ResponseEntity<String> findByTest(){
-            return ResponseEntity.ok("Funciona carai ");
     }
 }
